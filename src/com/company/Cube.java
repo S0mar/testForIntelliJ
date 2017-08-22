@@ -37,5 +37,10 @@ public class Cube {
     public int getSize() {
         return this.size;
     }
+
+    public boolean isSolved() {
+        //TODO
+        return false;
+    }
     //etc
 }

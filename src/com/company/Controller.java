@@ -19,7 +19,12 @@ public class Controller {
         }
     }
 
-    public String getSide(int side) {
+    public String cubeIsSolved() {
+        //TODO
+        return "";
+    }
+
+    public String getSideAsString(int side) {
         String returnString = "side: " + side + "\n";
 
         Side returnSide = cube.getSide(side);
@@ -31,5 +36,18 @@ public class Controller {
             returnString += "\n";
         }
         return returnString.trim();
+    }
+
+    public String turnSide(int side, boolean clockwise) {
+        if (clockwise) {
+            cube.turnClocwise(side);
+        } else {
+            cube.turnClocwise(side);
+            cube.turnClocwise(side);
+            cube.turnClocwise(side);
+            cube.turnClocwise(side);
+        }
+
+        return "side " + side + " turned\n" + this.getSideAsString(side);
     }
 }
