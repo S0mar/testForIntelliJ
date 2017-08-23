@@ -1,4 +1,6 @@
-package com.company;
+package rubix.logic;
+
+import rubix.logic.Side;
 
 public class Cube {
 
@@ -28,7 +30,13 @@ public class Cube {
 
     public void turnClocwise(int side) {
         //TODO
-        //turnClocwise clockwise
+
+        //turn face
+        //  temp copy
+        //  two for loops
+        //turn sides
+        //  copy the correct strip of tiles
+        //  set strip for new tile
     }
 
     public Side getSide(int side) {

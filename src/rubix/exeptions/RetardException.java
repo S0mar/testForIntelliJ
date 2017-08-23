@@ -1,4 +1,4 @@
-package com.company;
+package rubix.exeptions;
 
 public class RetardException extends Exception {
 

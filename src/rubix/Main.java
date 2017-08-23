@@ -1,4 +1,7 @@
-package com.company;
+package rubix;
+
+import rubix.exeptions.RetardException;
+import rubix.logic.Controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;

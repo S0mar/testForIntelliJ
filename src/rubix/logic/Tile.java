@@ -1,4 +1,4 @@
-package com.company;
+package rubix.logic;
 
 public class Tile {
 

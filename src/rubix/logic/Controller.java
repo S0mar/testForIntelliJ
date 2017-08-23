@@ -1,4 +1,4 @@
-package com.company;
+package rubix.logic;
 
 import java.util.Random;
 
@@ -16,7 +16,7 @@ public class Controller {
         for (int i = 0; i < turns; i++) {
             cube.turnClocwise(r.nextInt());
         }
-        return "shuffeled " + turns + " times";
+        return "shuffled " + turns + " times";
     }
 
     public String cubeIsSolved() {
@@ -52,7 +52,9 @@ public class Controller {
 
     public String resetCube() {
         //TODO asasasas
-        return "boiboi";
+        int size = this.cube.getSize();
+        this.cube = new Cube(size);
+        return "cube has been reset";
     }
 
     public String newCube(int size) {
