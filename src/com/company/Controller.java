@@ -4,24 +4,23 @@ import java.util.Random;
 
 public class Controller {
 
-    //shuffle
-    //etc
+
     private Cube cube;
 
     public Controller(int cubeSize) {
         this.cube = new Cube(cubeSize);
     }
 
-    public void shuffle(int turns) {
+    public String shuffle(int turns) {
         Random r = new Random();
-        for(int i = 0; i < turns; i++) {
+        for (int i = 0; i < turns; i++) {
             cube.turnClocwise(r.nextInt());
         }
+        return "shuffeled " + turns + " times";
     }
 
     public String cubeIsSolved() {
-        //TODO
-        return "";
+        return this.cube.isSolved() ? "is solved" : "is not solved";
     }
 
     public String getSideAsString(int side) {
@@ -31,7 +30,7 @@ public class Controller {
 
         for (int i = 0; i < cube.getSize(); i++) {
             for (int j = 0; j < cube.getSize(); j++) {
-                returnString += returnSide.getTile(i,j).getColor();
+                returnString += returnSide.getTile(i, j).getColor();
             }
             returnString += "\n";
         }
@@ -48,6 +47,16 @@ public class Controller {
             cube.turnClocwise(side);
         }
 
-        return "side " + side + " turned\n" + this.getSideAsString(side);
+        return "side " + side + " turned " + (clockwise ? "clockwise" : "counterclockwise") + "\n" + this.getSideAsString(side);
+    }
+
+    public String resetCube() {
+        //TODO asasasas
+        return "boiboi";
+    }
+
+    public String newCube(int size) {
+        this.cube = new Cube(size);
+        return "new cube with size " + size;
     }
 }

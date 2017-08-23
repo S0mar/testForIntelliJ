@@ -20,8 +20,25 @@ public class Side {
         this.tiles = tiles;
     }
 
+    public boolean isOneColor() {
+        int temp = tiles[0][0].getColor();
+
+        for (Tile[] tiles : tiles) {
+            for (Tile tile : tiles) {
+                if(temp != tile.getColor()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public Tile[][] getTiles() {
         return this.tiles;
+    }
+
+    public void setTile(int x, int y, int color) {
+        this.tiles[x][y].setColor(color);
     }
 
     public Tile getTile(int x, int y) {

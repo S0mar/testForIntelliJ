@@ -10,28 +10,19 @@ public class Main {
 
         BufferedReader bb = new BufferedReader(new InputStreamReader(System.in));
 
-	    while (true) try {
-	        /*
-	        read the input
-	         */
-            System.out.print("lol k: ");
-            String i = bb.readLine();
+        Controller controller = new Controller(3);
 
-            /*
-            quit in emergency
-             */
-            if (i.equals("quit")) {
-                return;
+        Command command = Command.NULL;
+        // start the while loop for the program
+        do {
+            try {
+                // execute the first command that matches the input
+                command = Command.excecuteFirstMatching(bb.readLine(), controller);
+            } catch (RetardException e) {
+                System.out.print(e.getMessage());
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-            /*
-            iksde
-             */
-            System.out.println("iksde " + i + "\n" + i.hashCode());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        } while (command == null || command.isRunning());
     }
 }

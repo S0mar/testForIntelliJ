@@ -23,6 +23,7 @@ public class Cube {
             sides[i] = new Side(size, i);
         }
         this.sides = sides;
+        this.size = size;
     }
 
     public void turnClocwise(int side) {
@@ -39,8 +40,12 @@ public class Cube {
     }
 
     public boolean isSolved() {
-        //TODO
-        return false;
+        for (Side side : sides) {
+            if(!side.isOneColor()) {
+                return false;
+            }
+        }
+        return true;
     }
-    //etc
+//etc
 }
